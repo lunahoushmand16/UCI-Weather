@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UCI Weather</title>
+  </head>
+  <body>
+    <header style="border: 2px solid black">
+      <nav>
+        <ul
+          style="display: flex; gap: 10px; padding: 0%; list-style-type: none"
+        >
+          <li>
+            <a style="color: black; text-decoration: none" href="#">
+              company name
+            </a>
+          </li>
+          <li>
+            <a style="color: black; text-decoration: none" href="#">
+              contact us
+            </a>
+          </li>
+          <li>
+            <a style="color: black; text-decoration: none" href="#"> menu </a>
+          </li>
+          <li>
+            <a style="color: black; text-decoration: none" href="#"> .... </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main style="display: flex; justify-content: center">
+      <div
+        class="container"
+        style="
+          width: 90%;
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+        "
+      >
+        <section id="search" style="margin: 20px 0 20px 0">
+          <form id="search-form" style="border: 2px solid black">
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="City or Zip Code"
+              required
+            />
+            <button hidden type="submit">Search</button>
+          </form>
+        </section>
+
+        <section
+          id="today"
+          style="
+            border: 2px solid black;
+            width: inherit;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+          "
+        >
+          <div id="today-weather" style="border: 2px solid red; width: 22%">
+            <!-- Placeholder for today's weather data -->
+            <p>monday</p>
+            <p>Weather</p>
+            <img
+              id="today-icon"
+              src="pic.jpg"
+              alt="Weather Icon"
+              style="width: 100%"
+            />
+          </div>
+          <div id="today-weather" style="border: 2px solid red; width: 22%">
+            <!-- Placeholder for today's weather data -->
+            <p>tuesday</p>
+            <p>Weather</p>
+            <img
+              id="today-icon"
+              src="pic.jpg"
+              alt="Weather Icon"
+              style="width: 100%"
+            />
+          </div>
+          <div id="today-weather" style="border: 2px solid red; width: 22%">
+            <!-- Placeholder for today's weather data -->
+            <p>wednesday</p>
+            <p>Weather</p>
+            <img
+              id="today-icon"
+              src="pic.jpg"
+              alt="Weather Icon"
+              style="width: 100%"
+            />
+          </div>
+        </section>
+
+        <section style="border: 2px solid black; margin: 15px 0 15px 0">
+          <p>Summary:"It will be hot"</p>
+        </section>
+        <section
+          style="
+            border: 2px solid black;
+            margin: 15px 0 15px 0;
+            width: inherit;
+            height: 100px;
+            padding: 20px;
+          "
+        >
+          <p>Instructions how to use:</p>
+        </section>
+      </div>
+    </main>
+
+    <footer style="border: 2px solid black">
+      <ul style="display: flex; gap: 10px; padding: 0%; list-style-type: none">
+        <li>
+          <a style="color: black; text-decoration: none" href="#"
+            >company name</a
+          >
+        </li>
+        <li>
+          <a style="color: black; text-decoration: none" href="#"
+            >contact info</a
+          >
+        </li>
+        <li>
+          <a style="color: black; text-decoration: none" href="#">....</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
