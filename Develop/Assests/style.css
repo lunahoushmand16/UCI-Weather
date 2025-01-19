@@ -1,5 +1,5 @@
 /* weather.css*/
-body {font-family: "Gill Sans"
+body {font-family: "Gill Sans", "Adobe Garamond";
       margin:0;
       padding:0;
       background-image: url('weather.jpg');
@@ -28,3 +28,9 @@ header {
   @media-screen (min-width: 769px)
   {.container 
    {flex-direction: row;}
+footer {
+   background-color: yellow;
+  color: white
+  padding:10px;
+  text-align: center;
+}
