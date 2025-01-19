@@ -25,6 +25,20 @@ header {
     flex-direction:column;
     align-items: center;
   }
+table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+}
+      th {
+            background-color: yellow;
+            color:white;
+            padding: 5px
+            text-align: center;
+      }
+      tr:hover {
+            background-color: light-blue;
+      }
   @media-screen (min-width: 769px)
   {.container 
    {flex-direction: row;}
