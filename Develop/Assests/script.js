@@ -33,3 +33,14 @@ async function fetchWeatherData(query) {
         displayError(error.message);
     }
 }
+
+// Function to update the UI with weather data
+function updateWeatherUI(data) {
+    const { name, main, weather } = data;
+    weatherContainer.innerHTML = `
+        <h2>Weather in ${name}</h2>
+        <p>Temperature: ${main.temp}°C</p>
+        <p>Condition: ${weather[0].description}</p>
+        <img src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="${weather[0].description}">
+    `;
+}
