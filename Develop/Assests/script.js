@@ -50,6 +50,40 @@ function displayError(message) {
     weatherContainer.innerHTML = `<p class="error">${message}</p>`;
 }
 
+// -------------------------------
+
 // Notes:
 // 1. Replace "your_api_key_here" with a valid API key from OpenWeather.
 // 2. Ensure you have a basic HTML structure with IDs: search-form, search-input, and weather-container.
+
+// -------------------------------
+
+// Notes:
+// 1. Event Listener
+// 2. API Integration
+// 3. Content Updating
+// 4. Error Handling 
+
+// -------------------------------
+
+// Notes on HTML:
+// HTML File needs to include inpujt fields with IDs or classes that the Javascript then references. 
+// Think #search-bar, #search-button, #weather-info, etc
+
+// The HTML currently has a placeholder <input> element in the .search-container. However it does NOT have an ID or [name] attribute to make it easily targetable in JavaScript.
+// To fix this, we will need to add an [id] attribute, such as (id="search-bar")
+// The <button> is present in .search-button, but that also lacks an ID or Class for Javascript to hook onto.
+// To fix this, we will need to add an [id] attribute, such as (id="search-button")
+// The .WeatherInfo-section includes placeholders for images (image-1, image-2, image-3) and has basic headings which are all good. 
+// However, it does not have placeholders for text-based weather data like temperature, description, etc
+// It may be worth considering having dedicated <div> or <span> elements with IDs or Classes to populate the API response dynamically.
+// For example, 
+// <h3 id="today-temp">Temperature: --°C </h3>
+// <h4 id="today-desc">Description: -- </h4>
+
+// -------------------------------
+
+// Notes: CSS Side
+// CSS style needs elements to ensure a good user experience, thinks like visibility and layout.
+
+
