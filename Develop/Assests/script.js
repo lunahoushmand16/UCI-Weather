@@ -58,7 +58,7 @@ function displayError(message) {
 
 // -------------------------------
 
-// Notes:
+// Notes on Javascript:
 // 1. Event Listener
 // 2. API Integration
 // 3. Content Updating
@@ -85,5 +85,13 @@ function displayError(message) {
 
 // Notes: CSS Side
 // CSS style needs elements to ensure a good user experience, thinks like visibility and layout.
+// The [body] selector uses box-sizing: border-box which is fantastic and makes sure the layout stays controlled. 
+// A suggestion might be to add " line-height: 1.6 " to improve text readability across the website
+// Or to add a " min-height: 100vh; " for the body incase the footer overlaps on shorter pages.
+// The header is clean and properly flexbox aligned, the navigation links also react to hovering as a nice touch.
+// A suggestion would be to define the [hover] state for the header links (nav a:hover) with a clear [transition] such as (all 0.3s ease) for user experience.
+// Having a [gap] between (.nav-website) items is already defined but would ensure it works smoothly with the padding.
+// The banner is set to adapt to different screen sizes which is excellent, but is missing both alt text and a background color incase the image fails to load.
+// Adding something like (background-color: #eef5fc;) and an Alt text would help for user accessibility. 
 
-
+// -------------------------------
