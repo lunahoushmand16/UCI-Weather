@@ -9,3 +9,13 @@ const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
 const weatherContainer = document.querySelector("#weather-container");
 
+// Event listener for form submission
+searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = searchInput.value.trim();
+    if (query) {
+        fetchWeatherData(query);
+    } else {
+        displayError("Please enter a city or ZIP code.");
+    }
+});
