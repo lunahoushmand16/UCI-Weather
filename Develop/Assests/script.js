@@ -44,3 +44,12 @@ function updateWeatherUI(data) {
         <img src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="${weather[0].description}">
     `;
 }
+
+// Function to display errors
+function displayError(message) {
+    weatherContainer.innerHTML = `<p class="error">${message}</p>`;
+}
+
+// Notes:
+// 1. Replace "your_api_key_here" with a valid API key from OpenWeather.
+// 2. Ensure you have a basic HTML structure with IDs: search-form, search-input, and weather-container.
