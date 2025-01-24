@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <!-- Call CSS file here -->
+    <!-- Link to CSS file -->
     <link rel="stylesheet" href="./Develop/Assests/style.css">
 </head>
 
@@ -29,9 +29,9 @@
         </nav>  
     </header>
 
-    <!-- Main start from here -->
+    <!-- Main content -->
     <main>
-        <!-- Banner section start here -->
+        <!-- Banner section -->
         <section class="banner">
             <div class="banner-text">
                 <h1>
@@ -42,70 +42,98 @@
                 </h2>
             </div>
         </section>
-
-    <!-- Search section start here -->
+      
+      <!-- Search section -->
       <section class="search-block">
         <div class="search-container">
-            <label for="search" class="search-label">Enter City or Zip Code : </label>
-            <input type="text" placeholder="Search City or Zip Code">
+            <label for="search-input" class="search-label">Enter City or Zip Code: </label>
+            <!-- Added 'id="search-input"' for easy reference in JS -->
+            <input type="text" id="search-input" placeholder="Search City or Zip Code">
         </div>
         <div class="search-button">
-            <button type="submit">Search</button> 
+            <!-- Added 'id="search-button"' for easy reference in JS -->
+            <button type="submit" id="search-button">Search</button>
         </div>
       </section>
 
-    <!-- Weather information related with external API -->
-    <section class="WeatherInfo-section">
+    <!-- Weather information section -->
+    <section class="WeatherInfo-section" id="weather-container">
         <div class="flex-container">
+            <!-- Added placeholders for weather data -->
             <figure class="todays-weather">
                 <div>
                     <h3>Today</h3>
                     <h3>Weather</h3>
-                    <img src="#" alt="image search-engine-optimization" class="image-1" />
+                    <img src="#" alt="Today's weather icon" class="image-1" id="today-icon"/>
+                    <h4 id="today-temp">Temperature: --°C</h4>
+                    <h4 id="today-desc">Description: --</h4>
                 </div>
             </figure>
             <figure class="tomorrow-weather">
                 <div>
                     <h3>Tomorrow</h3>
                     <h3>Weather</h3>
-                    <img src="#" alt="image search-engine-optimization" class="image-2" />
+                    <img src="#" alt="Tomorrow's weather icon" class="image-2" id="tomorrow-icon"/>
+                    <h4 id="tomorrow-temp">Temperature: --°C</h4>
+                    <h4 id="tomorrow-desc">Description: --</h4>
                 </div>
             </figure>
             <figure class="box-3">
                 <div>
                     <h3>Box3</h3>
-                    <img src="#" alt="image search-engine-optimization" class="image-3" />
+                    <img src="#" alt="Additional weather info" class="image-3"/>
                 </div>
             </figure>
         </div>
     </section>
 
-    <!-- Summary Of Weather section -->
+    <!-- Summary section -->
     <section class="summary-content">
         <h2>Summary</h2>
         <div class="flex-container">
-            <p> Today will be hot day</p>
+            <p id="summary-text">Today will be a hot day.</p>
         </div>
     </section>
 
-    <!-- Instruction section for how to use the App-->
+    <!-- Instruction section -->
     <section>
         <div class="Instruction-content">
-            <h2>Instruction how to use the App :</h2>
+            <h2>How to use the WeatherApp:</h2>
             <p id="Instruction-id">
                 Use our Professional collections to get extended weather data for any coordinates on the globe.
             </p>
         </div>    
     </section>
-
-    </main>
+</main>
     
-    <!-- Footer section start here -->
+    <!-- Footer section -->
     <footer>
         <p>Weather App | Contact Info | &copy; 2025</p>
     </footer>
 
     <!-- call Java script by this link -->
-    <script src="script.js"></script>
+    <script src="./Develop/Assests/script.js"></script>
     <script src="./Develop/Assests/form.js"></script>
 </body>
+</html>
+
+<!-- NOTES & Suggestions -->
+
+<!-- 
+
+Input and Button IDs:
+- I’ve added id="search-input" to the search input field and id="search-button" to the button to ensure they’re easily targetable in your JavaScript.
+
+Weather Data Placeholders:
+- Added IDs to the temperature and description elements for today and tomorrow weather (e.g., id="today-temp", id="today-desc", etc.), which will allow the JavaScript to dynamically update these values when the weather data is fetched.
+
+Image Elements:
+- Added specific IDs (id="today-icon", id="tomorrow-icon") for the weather icons to be dynamically populated by the JavaScript.
+
+Weather Container ID:
+- I added id="weather-container" to the section where the weather info is displayed to match the reference in your JavaScript (document.querySelector("#weather-container")).
+
+Summary Section:
+- Added id="summary-text" to the summary paragraph so that it can be dynamically updated by the JavaScript as well.
+
+-->
