@@ -59,10 +59,16 @@ function displayError(message) {
 // -------------------------------
 
 // Notes on Javascript:
-// 1. Event Listener
-// 2. API Integration
-// 3. Content Updating
-// 4. Error Handling 
+// 1. Event Listener            [ Done ]
+// 2. API Integration           [ Done ]
+// 3. Content Updating          [ Done ]
+// 4. Error Handling            [ Done ]
+// 5. Replace the API Key       [ Incomplete ]
+// 6. Check HTML Elements       [ Incomplete ]
+// 7. Handle "No Data Found"    [ Incomplete ] 
+// 8. Add Loading Indicator     [ Incomplete ]
+// 9. Test & Debug              [ Incomplete ]
+
 
 // -------------------------------
 
