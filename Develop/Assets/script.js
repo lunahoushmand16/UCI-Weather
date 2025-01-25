@@ -1,16 +1,16 @@
 // Weather App JavaScript Boilerplate
 
 // Constants for the API
-const API_KEY = "your_api_key_here"; // Replace with your actual API key
-const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+const API_KEY = "Y97G8TU6ZWSEVPHN9DCVCPN66"; // Replace with your actual API key
+const BASE_URL = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
 
 // Select DOM elements
-const searchForm = document.querySelector("#search-form");
+const searchButton = document.querySelector("#search-button");
 const searchInput = document.querySelector("#search-input");
 const weatherContainer = document.querySelector("#weather-container");
 
-// Event listener for form submission
-searchForm.addEventListener("submit", (event) => {
+// Event listener for button click
+searchButton.addEventListener("click", (event) => {
     event.preventDefault();
     const query = searchInput.value.trim();
     if (query) {
@@ -23,10 +23,12 @@ searchForm.addEventListener("submit", (event) => {
 // Function to fetch weather data
 async function fetchWeatherData(query) {
     try {
-        const response = await fetch(`${BASE_URL}?q=${query}&appid=${API_KEY}&units=metric`);
+        const response = await fetch(`${BASE_URL}/${query}?unitGroup=us&key=${API_KEY}&contentType=json`);
+
         if (!response.ok) {
             throw new Error("Weather data not found. Please check your input.");
         }
+
         const data = await response.json();
         updateWeatherUI(data);
     } catch (error) {
@@ -36,13 +38,62 @@ async function fetchWeatherData(query) {
 
 // Function to update the UI with weather data
 function updateWeatherUI(data) {
-    const { name, main, weather } = data;
-    weatherContainer.innerHTML = `
-        <h2>Weather in ${name}</h2>
-        <p>Temperature: ${main.temp}°C</p>
-        <p>Condition: ${weather[0].description}</p>
-        <img src="https://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="${weather[0].description}">
-    `;
+    // Extract relevant data from the API response
+    const todayWeather = data.days[0]; // Today's weather
+    const currentConditions = data.currentConditions;
+
+    // Update today's weather information
+    document.getElementById("today-temp").textContent = `Temperature: ${todayWeather.temp}°F (Max: ${todayWeather.tempmax}°F, Min: ${todayWeather.tempmin}°F)`;
+    document.getElementById("today-desc").textContent = `Condition: ${todayWeather.conditions}`;
+    
+    // Update tomorrow's weather information (assuming the second day in "days" array is for tomorrow)
+    if (data.days.length > 1) {
+        const tomorrowWeather = data.days[1];
+        document.getElementById("tomorrow-temp").textContent = `Temperature: ${tomorrowWeather.temp}°F (Max: ${tomorrowWeather.tempmax}°F, Min: ${tomorrowWeather.tempmin}°F)`;
+        document.getElementById("tomorrow-desc").textContent = `Condition: ${tomorrowWeather.conditions}`;
+    }
+
+    // Update summary information
+    document.getElementById("summary-text").textContent = data.description;
+
+    // Update weather icons for today
+    document.getElementById("today-icon").src = 
+        `https://www.visualcrossing.com/weather/icons/${currentConditions.icon}.png`;
+    document.getElementById("today-icon").alt = currentConditions.conditions;
+
+    // Update weather icons for tomorrow
+    document.getElementById("tomorrow-icon").src = 
+        `https://www.visualcrossing.com/weather/icons/${todayWeather.icon}.png`;
+    document.getElementById("tomorrow-icon").alt = todayWeather.conditions;
+
+    // Add map to the page
+    updateMap(data.latitude, data.longitude);
+}
+
+// Function to load the map using Leaflet.js
+function updateMap(latitude, longitude) {
+    const mapContainer = document.getElementById('map');
+
+    if (!mapContainer) {
+        console.error('Map container not found!');
+        return;
+    }
+
+    // Clear previous map instance if any
+    mapContainer.innerHTML = ""; 
+
+    // Initialize map
+    const map = L.map('map').setView([latitude, longitude], 10);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a marker to the map
+    L.marker([latitude, longitude]).addTo(map)
+        .bindPopup('Weather location')
+        .openPopup();
 }
 
 // Function to display errors
