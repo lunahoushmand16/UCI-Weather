@@ -168,15 +168,20 @@ figure {
   margin: 25px auto;
   padding: 20px;
   display: flex;
-  /* flex-direction: row; */
   flex-wrap: wrap;
   align-items: stretch;
-  /* justify-content: space-between; */
   justify-content: center; /* Center the weather content */
   background: linear-gradient(90deg, #ffffff 0%, #d8e3f5 100%); /* Match the search section color */ 
   border-radius: 10px; /* Rounded corners for a consistent look */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
   border: 1px solid #789de1; /* Add a border similar to other sections */
+}
+
+/* Style static text separately */
+.static-text {
+    color: #007bff; /* Example: Blue color for static text */
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 /* Summary container */
@@ -192,8 +197,7 @@ figure {
   text-decoration: none;
   background-blend-mode: soft-light;
   font-size: 20px; /* Fixed missing unit */
-  box-shadow: 0px 0px 5px #a4c8f0
-    
+  box-shadow: 0px 0px 5px #a4c8f0   
 }
 
 /* Summary Section */
@@ -206,6 +210,7 @@ figure {
     max-width: 800px; /* Center alignment */
     text-align: center; /* Align text */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+    
 }
 
 .summary-content h2 {
@@ -215,9 +220,10 @@ figure {
 }
 
 .summary-content p {
-    font-size: 16px;
+    font-size: 20px;
     color: #333;
-    margin: 0;
+    margin: auto;
+    margin-top: 30px; /* Moves text down */
 }
 
 /* Instructions Section */
