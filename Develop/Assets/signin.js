@@ -1,4 +1,6 @@
 document.getElementById('signInForm').addEventListener('submit', function(event) {
+    // prevent that default action and instead perform custom logic for handling the form data, such as
+    // Displaying error messages or success notifications. and Validating the user’s input.
     event.preventDefault();  // Prevent form from submitting 
 
     let name = document.getElementById('name').value;
