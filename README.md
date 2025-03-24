@@ -86,3 +86,8 @@ We are building a weather page that fetches data from a weather API using JavaSc
 - **Gelareh (HTML):** [Gelareh Houshmand]
 - **Daniel (CSS):** [Daniel Sampson]
 - **Jonathan (JavaScript):** [Jonathan Calderaro]
+
+---
+## Video
+
+[Link TO WeatherAPP](https://www.postgresql.org/docs/current/datatype.html)
