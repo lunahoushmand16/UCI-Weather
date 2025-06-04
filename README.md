@@ -90,4 +90,4 @@ We are building a weather page that fetches data from a weather API using JavaSc
 ---
 ## Video
 
-[Link TO WeatherAPP](https://www.postgresql.org/docs/current/datatype.html)
+[Link TO WeatherAPP](https://lunahoushmand16.github.io/UCI-Weather/)
